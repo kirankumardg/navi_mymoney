@@ -22,7 +22,7 @@ public class MainApp {
         // Check if the path provided is valid or not.
        
         String fileName = args[0];
-        fileName="/tmp/test.txt";
+        
       
         try {
             Paths.get(fileName);
