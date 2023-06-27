@@ -22,6 +22,7 @@ public class MainApp {
         // Check if the path provided is valid or not.
        
         String fileName = args[0];
+        fileName="/tmp/test.txt";
       
         try {
             Paths.get(fileName);
@@ -31,8 +32,8 @@ public class MainApp {
         }
 
 
-        DataValidationProcessor dataValidationProcesor = new DataValidationProcessor();
-        FileError er = dataValidationProcesor.checkForValidData(fileName);
+        DataValidationProcessor dataValidationProcessor = new DataValidationProcessor();
+        FileError er = dataValidationProcessor.checkForValidData(fileName);
 
         if (er.getLineNumber() != 0) {
             System.out.println("The input line is invalid " + er.getLineNumber());
