@@ -98,6 +98,10 @@ public class BalanceCommand {
 
             Map<String, Integer> currentValueMap = getCurrentValueMap(monthIndex, intitalInvestments, sipPayments, monthChangeMap);
 
+            if(currentValueMap==null){
+                System.out.println("CANNOT_REBALANCE");
+                return;
+            }
 
             int currentTotal = currentValueMap.get(EQUITY) + currentValueMap.get(DEBT) + currentValueMap.get(GOLD);
             int initialTotal = intitalInvestments.getEquity() + intitalInvestments.getGold() + intitalInvestments.getDebt();
